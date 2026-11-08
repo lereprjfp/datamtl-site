@@ -1,0 +1,9 @@
+{
+  "name": "DataMtl",
+  "short_name": "DataMtl",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }],
+  "theme_color": "#0F1C25",
+  "background_color": "#0F1C25",
+  "display": "browser",
+  "start_url": "/"
+}

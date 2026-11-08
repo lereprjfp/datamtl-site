@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DataMtl — Gouvernance des données, vie privée et IA responsable · Montréal</title>
+<meta name="description" content="DataMtl est une firme-conseil montréalaise en gouvernance des données : qualité, métadonnées, données maîtres et client, vie privée (Loi 25) et IA. Conseil pour les organisations, Microsoft 365 géré pour les PME de quartier.">
+<meta name="author" content="DataMtl">
+<meta name="theme-color" content="#0F1C25">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://datamtl.com/">
+<link rel="alternate" hreflang="fr-ca" href="https://datamtl.com/">
+<link rel="alternate" hreflang="en-ca" href="https://datamtl.com/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://datamtl.com/">
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://datamtl.com/">
+<meta property="og:title" content="DataMtl — Gouvernance des données, vie privée et IA responsable">
+<meta property="og:description" content="Conseil pratique en gouvernance des données, vie privée et IA à Montréal. Loi 25, LPRPDE, RGPD, Microsoft Purview, offre Microsoft 365 gérée pour PME.">
+<meta property="og:image" content="https://datamtl.github.io/datamtl-assets/og-datamtl.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:locale:alternate" content="en_CA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DataMtl — Gouvernance des données, vie privée et IA responsable">
+<meta name="twitter:image" content="https://datamtl.github.io/datamtl-assets/og-datamtl.png">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --onyx: #0f1c25;          /* bleu nuit DataMtl (logo) */
+    --onyx-2: #182a36;
+    --bone: #f3f6f8;          /* blanc froid */
+    --accent: #29abe2;        /* bleu DataMtl (logo) */
+    --accent-clair: #6cc8f0;
+    --petrole: #17506b;       /* bande : bleu profond dérivé */
+    --sapin: #2c6a4e;
+    --grenat: #8f3130;
+    --cuivre: #9a5524;
+    --text: var(--bone);
+    --text-soft: #f3f6f8b8;
+    --line: #f3f6f829;
+    --display: "Bebas Neue", "Arial Narrow", Impact, sans-serif;
+    --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "Space Mono", ui-monospace, Menlo, monospace;
+    --wrap: 1120px;
+    --gutter: clamp(20px, 5vw, 48px);
+  }
+  *, :before, :after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { background: var(--onyx); color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; margin: 0; font-size: 17px; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+  img, svg { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent-clair); outline-offset: 3px; }
+  main { flex: 1; }
+  .wrap { width: 100%; max-width: var(--wrap); padding: 0 var(--gutter); margin: 0 auto; }
+  .skip { background: var(--accent); color: var(--onyx); z-index: 10; padding: 8px 14px; font-weight: 600; position: absolute; top: 8px; left: -9999px; }
+  .skip:focus { left: 8px; }
+
+  .bar-title { font-family: var(--display); text-transform: uppercase; letter-spacing: .01em; border-left: 5px solid var(--accent); margin: 0 0 28px; padding-left: 18px; font-size: clamp(38px, 5.4vw, 60px); font-weight: 400; line-height: .95; }
+  .section.bone .bar-title { border-left-color: var(--petrole); }
+  .mono { font-family: var(--mono); letter-spacing: .04em; font-size: 12.5px; }
+  .btn { font-family: var(--sans); color: var(--onyx); background: var(--accent); border: 2px solid var(--accent); border-radius: 4px; padding: 13px 22px; font-size: 15px; font-weight: 600; text-decoration: none; transition: background .15s, color .15s, border-color .15s; display: inline-block; cursor: pointer; }
+  .btn:hover { background: var(--accent-clair); border-color: var(--accent-clair); }
+  .btn.ghost { color: var(--bone); border-color: var(--line); background: 0 0; }
+  .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .section.bone .btn.ghost { color: var(--onyx); border-color: #0f1c2540; }
+  .section.bone .btn.ghost:hover { border-color: var(--petrole); color: var(--petrole); }
+  .btn-row { flex-wrap: wrap; gap: 12px; display: flex; }
+  .tags { flex-wrap: wrap; align-items: center; gap: 8px 10px; display: flex; }
+  .tag { font-family: var(--mono); border: 1px solid var(--accent); color: var(--accent); white-space: nowrap; border-radius: 3px; padding: 6px 9px 5px; font-size: 11.5px; line-height: 1; }
+  .tag.fam { color: var(--bone); background: var(--fam, var(--petrole)); border-color: #0000; }
+  .section.bone .tag { border-color: var(--petrole); color: var(--petrole); }
+
+  /* Header */
+  .site-header { border-bottom: 1px solid var(--line); }
+  .site-header .wrap { flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 28px; padding-top: 14px; padding-bottom: 14px; display: flex; }
+  .brand { display: flex; align-items: center; text-decoration: none; }
+  .brand svg { height: 38px; width: auto; }
+  .site-nav { flex-wrap: wrap; align-items: center; gap: 4px 26px; display: flex; }
+  .site-nav a { color: var(--bone); border-bottom: 2px solid #0000; padding: 8px 0; font-size: 16.5px; font-weight: 600; text-decoration: none; }
+  .site-nav a:hover { color: var(--accent); }
+  .site-nav button.lang { font-family: var(--mono); color: var(--bone); background: 0 0; border: 1px solid var(--line); border-radius: 3px; padding: 5px 9px; font-size: 12.5px; cursor: pointer; }
+  .site-nav button.lang:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Hero */
+  .hero { overflow: clip; }
+  .hero .wrap { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: center; gap: clamp(24px, 4vw, 56px); padding-top: clamp(40px, 7vw, 88px); padding-bottom: clamp(48px, 8vw, 104px); display: grid; }
+  .hero-status { color: var(--accent); margin: 0 0 22px; display: inline-block; }
+  .hero h1 { font-family: var(--display); text-transform: uppercase; letter-spacing: .005em; text-wrap: balance; margin: 0 0 14px; font-size: clamp(60px, 8.4vw, 112px); font-weight: 400; line-height: .88; }
+  .hero h1 small { color: var(--accent); text-transform: none; letter-spacing: .02em; margin-top: .3em; font-size: .42em; line-height: 1; display: block; }
+  .hero-body { color: var(--text-soft); max-width: 34ch; margin: 22px 0 30px; font-size: clamp(18px, 2vw, 21px); line-height: 1.5; }
+  .facade { width: 100%; max-width: 560px; margin: 0 auto; animation: 1.2s ease-out .15s backwards allume; }
+  @keyframes allume { 0% { opacity: 0 } 35% { opacity: .6 } 45% { opacity: .3 } to { opacity: 1 } }
+
+  /* Band */
+  .band { background: var(--petrole); }
+  .band .wrap { grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 12px clamp(24px, 5vw, 64px); padding-top: clamp(28px, 4vw, 44px); padding-bottom: clamp(28px, 4vw, 44px); display: grid; }
+  .band h2 { font-family: var(--display); text-transform: uppercase; color: var(--accent-clair); margin: 0; font-size: clamp(40px, 6vw, 72px); font-weight: 400; line-height: .95; }
+  .band p { max-width: 48ch; margin: 0; font-size: 18px; }
+
+  /* Sections */
+  .section { padding: clamp(48px, 7vw, 88px) 0; }
+  .section.bone { background: var(--bone); color: var(--onyx); }
+  .section.bone .text-soft { color: #0f1c25b8; }
+  .text-soft { color: var(--text-soft); }
+  .lede { max-width: 60ch; margin: -10px 0 36px; font-size: 18px; }
+  .cols { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 28px clamp(28px, 4vw, 56px); display: grid; }
+  .cols h3 { font-family: var(--display); text-transform: uppercase; margin: 0 0 10px; font-size: 30px; font-weight: 400; line-height: 1; }
+  .cols p { max-width: 38ch; margin: 0; }
+  .cols .num { font-family: var(--mono); font-size: 12px; color: var(--petrole); letter-spacing: .06em; display: block; margin-bottom: 8px; }
+  .section:not(.bone) .cols .num { color: var(--accent); }
+  .section.bone .cols p { color: #0f1c25c9; }
+
+  /* Info cards */
+  .info { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; display: grid; }
+  .info > div { background: var(--onyx-2); border-radius: 6px; padding: 26px 28px 30px; display: flex; flex-direction: column; }
+  .info h3 { font-family: var(--display); text-transform: uppercase; color: var(--accent); margin: 0 0 12px; font-size: 32px; font-weight: 400; line-height: 1; }
+  .info p { margin: 0 0 18px; font-size: 17px; line-height: 1.5; }
+  .info ul { margin: 0 0 22px; padding: 0; list-style: none; }
+  .info li { padding: 8px 0; border-top: 1px solid var(--line); font-size: 15.5px; color: var(--text-soft); }
+  .info li:first-child { border-top: 0; }
+  .info .btn-row { margin-top: auto; }
+  .section.bone .info > div { background: #fff; box-shadow: 0 1px 0 #0f1c2514; }
+  .section.bone .info h3 { color: var(--petrole); }
+  .section.bone .info li { border-top-color: #0f1c251f; color: #0f1c25c9; }
+
+  /* Tiers */
+  .tiers .featured { box-shadow: inset 0 0 0 2px var(--accent); }
+  .note { font-family: var(--mono); font-size: 12px; color: var(--text-soft); margin: 22px 0 0; max-width: 70ch; }
+
+  /* About */
+  .about { grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: clamp(28px, 5vw, 64px); display: grid; align-items: start; }
+  .about p { max-width: 62ch; margin: 0 0 18px; }
+  .about aside { color: var(--bone); background: var(--onyx-2); border-radius: 6px; padding: 24px 26px 28px; }
+  .about aside h3 { font-family: var(--display); text-transform: uppercase; color: var(--accent); margin: 0 0 10px; font-size: 26px; font-weight: 400; line-height: 1; }
+  .about aside p { margin: 0 0 14px; font-size: 16px; }
+  .about aside p:last-child { margin: 0; }
+
+  /* Contact */
+  .contact { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 64px); display: grid; align-items: start; }
+  .contact .info > div { padding: 22px 24px 24px; }
+  .contact .info h3 { font-size: 24px; }
+  .contact .info p { margin: 0; font-size: 17px; }
+  .contact .info a { text-decoration-color: var(--accent); text-underline-offset: 4px; }
+  form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field.full { grid-column: 1 / -1; }
+  label { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; color: var(--text-soft); }
+  input, select, textarea { font-family: var(--sans); background: var(--onyx-2); border: 1px solid var(--line); color: var(--bone); padding: 12px 14px; font-size: 16px; border-radius: 4px; outline: none; transition: border-color .15s; -webkit-appearance: none; appearance: none; width: 100%; }
+  select { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%2329abe2' stroke-width='1.6'/></svg>"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+  select option { background: var(--onyx-2); color: var(--bone); }
+  input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+  textarea { min-height: 140px; resize: vertical; }
+  .hp { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; }
+  .consent { font-size: 13.5px; color: var(--text-soft); margin: 0; }
+  .consent a { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+  .form-actions { grid-column: 1 / -1; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .form-status { font-family: var(--mono); font-size: 12.5px; color: var(--accent); }
+
+  /* Privacy */
+  .plain p { max-width: 64ch; }
+  .plain h3 { font-family: var(--display); text-transform: uppercase; font-size: 28px; font-weight: 400; line-height: 1; margin: 28px 0 8px; }
+  .plain a:not(.btn) { color: var(--accent); }
+  .section.bone .plain a:not(.btn) { color: var(--petrole); }
+
+  /* Footer */
+  .site-footer { border-top: 1px solid var(--line); margin-top: clamp(56px, 9vw, 120px); padding: 28px 0 36px; }
+  .site-footer .wrap { flex-wrap: wrap; justify-content: space-between; gap: 14px 40px; display: flex; }
+  .site-footer p { color: var(--text-soft); margin: 0; font-size: 14.5px; line-height: 1.8; }
+  .site-footer a { color: var(--bone); text-underline-offset: 3px; text-decoration-color: var(--line); }
+  .site-footer a:hover { color: var(--accent); }
+  .site-footer .legal { font-size: 12.5px; max-width: 72ch; margin-top: 10px; }
+
+  @media (width <= 820px) {
+    .hero .wrap, .band .wrap, .about, .contact { grid-template-columns: 1fr; }
+    .facade { max-width: 420px; }
+  }
+  @media (width <= 620px) {
+    body { font-size: 16px; }
+    .site-nav { gap: 2px 18px; }
+    .site-nav a:not(.lang) { font-size: 15px; }
+    form { grid-template-columns: 1fr; }
+    .field.full { grid-column: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, :before, :after { transition: none !important; animation: none !important; } }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "DataMtl",
+  "url": "https://datamtl.com/",
+  "image": "https://datamtl.github.io/datamtl-assets/og-datamtl.png",
+  "description": "Firme-conseil en gouvernance des données, protection des renseignements personnels et gouvernance de l'IA, basée à Montréal.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Montréal", "addressRegion": "QC", "addressCountry": "CA" },
+  "areaServed": ["Québec", "Canada"],
+  "knowsLanguage": ["fr-CA", "en-CA"],
+  "founder": { "@type": "Person", "name": "Jean-François Pinel" }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="DataMtl">
+      <svg viewBox="0 0 250 74" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DataMtl.com">
+        <text x="0" y="46" font-family="Inter, Arial, Helvetica, sans-serif" font-weight="800" font-size="52" letter-spacing="-1" fill="#f3f6f8">DATAMTL</text>
+        <text x="250" y="70" text-anchor="end" font-family="Inter, Arial, Helvetica, sans-serif" font-weight="700" font-size="20" fill="#29abe2">.com</text>
+      </svg>
+    </a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#pme" data-i18n="nav.pme">PME</a>
+      <a href="#apropos" data-i18n="nav.about">À propos</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <button class="lang" type="button" id="langBtn" aria-label="Switch language">EN</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="mono hero-status" data-i18n="hero.status">Montréal · Gouvernance des données · DAMA-DMBOK · Loi 25</p>
+      <h1 data-i18n="hero.title">Vos données,<br>sous contrôle<br>réel.<small>Gouvernance · Qualité · Données maîtres · Vie privée · IA</small></h1>
+      <p class="hero-body" data-i18n="hero.body">Rôles, processus, qualité, métadonnées, données maîtres : une gouvernance qui s'implante et se maintient — la vie privée et l'IA en font partie, pas l'inverse. Pour les organisations, et pour les PME de quartier qui veulent une solution simple, à leur mesure.</p>
+      <div class="btn-row">
+        <a class="btn" href="#contact" data-i18n="hero.cta1">Parlons-en</a>
+        <a class="btn ghost" href="#services" data-i18n="hero.cta2">Voir les services</a>
+      </div>
+    </div>
+    <!-- Illustration : trois dossiers gouvernés -->
+    <svg class="facade" viewBox="0 0 560 440" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0" y="0" width="560" height="440" rx="10" fill="#182a36"/>
+      <g stroke="#f3f6f814" stroke-width="1"><path d="M40 60H520M40 120H520M40 180H520M40 240H520M40 300H520M40 360H520"/><path d="M100 20V420M180 20V420M260 20V420M340 20V420M420 20V420M500 20V420"/></g>
+      <!-- carte arrière -->
+      <g transform="translate(150 70)"><rect width="300" height="200" rx="8" fill="#0f1c25" stroke="#f3f6f829"/><rect x="22" y="24" width="90" height="10" rx="2" fill="#f3f6f855"/><rect x="22" y="48" width="200" height="8" rx="2" fill="#f3f6f822"/><rect x="22" y="66" width="160" height="8" rx="2" fill="#f3f6f822"/><rect x="22" y="84" width="180" height="8" rx="2" fill="#f3f6f822"/></g>
+      <!-- carte milieu -->
+      <g transform="translate(110 120)"><rect width="300" height="200" rx="8" fill="#17506b" stroke="#f3f6f829"/><rect x="22" y="24" width="110" height="10" rx="2" fill="#f3f6f8"/><rect x="22" y="48" width="210" height="8" rx="2" fill="#f3f6f866"/><rect x="22" y="66" width="150" height="8" rx="2" fill="#f3f6f866"/><rect x="22" y="84" width="190" height="8" rx="2" fill="#f3f6f866"/><rect x="22" y="150" width="70" height="22" rx="3" fill="#29abe2"/><rect x="100" y="150" width="56" height="22" rx="3" fill="#f3f6f833"/></g>
+      <!-- carte avant -->
+      <g transform="translate(70 170)"><rect width="300" height="200" rx="8" fill="#f3f6f8"/><rect x="22" y="24" width="120" height="11" rx="2" fill="#0f1c25"/><rect x="22" y="50" width="220" height="8" rx="2" fill="#0f1c2555"/><rect x="22" y="68" width="170" height="8" rx="2" fill="#0f1c2555"/><rect x="22" y="86" width="200" height="8" rx="2" fill="#0f1c2555"/><rect x="22" y="104" width="140" height="8" rx="2" fill="#0f1c2555"/>
+        <!-- étiquettes -->
+        <rect x="22" y="150" width="64" height="24" rx="3" fill="#2c6a4e"/><rect x="94" y="150" width="64" height="24" rx="3" fill="#8f3130"/><rect x="166" y="150" width="64" height="24" rx="3" fill="#9a5524"/></g>
+      <!-- cadenas -->
+      <g transform="translate(400 250)"><circle cx="60" cy="60" r="60" fill="#29abe2"/><rect x="38" y="56" width="44" height="34" rx="5" fill="#0f1c25"/><path d="M46 56V46a14 14 0 0 1 28 0v10" fill="none" stroke="#0f1c25" stroke-width="7" stroke-linecap="round"/><circle cx="60" cy="72" r="4" fill="#29abe2"/></g>
+      <!-- coche -->
+      <g transform="translate(420 70)"><circle cx="40" cy="40" r="40" fill="#0f1c25" stroke="#29abe2" stroke-width="3"/><path d="M24 41l11 11 21-24" fill="none" stroke="#29abe2" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== BAND ===== -->
+<section class="band">
+  <div class="wrap">
+    <h2 data-i18n="band.title">Conseil · PME · Microsoft</h2>
+    <p data-i18n="band.p">Même rigueur, deux formats : des programmes de gouvernance pour les organisations, et une solution simple, à la hauteur de la PME de quartier — Microsoft 365 géré, avec les bases de la Loi 25 intégrées.</p>
+  </div>
+</section>
+
+<!-- ===== DEUX FORMATS ===== -->
+<section class="section bone" id="formats">
+  <div class="wrap">
+    <h2 class="bar-title" data-i18n="fmt.title">Deux façons de travailler avec nous</h2>
+    <p class="lede text-soft" data-i18n="fmt.lede">La gouvernance n'a pas la même forme dans une institution financière et dans une entreprise de 15 personnes. On fait les deux — sans vendre la première à la seconde.</p>
+    <div class="info">
+      <div>
+        <h3 data-i18n="fmt1.h">01 — Organisations</h3>
+        <p data-i18n="fmt1.p">Programmes de gouvernance des données — rôles, processus, qualité, métadonnées, données maîtres et client — avec la vie privée et l'IA intégrées : évaluation, conception, déploiement et rôles fractionnels.</p>
+        <ul>
+          <li data-i18n="fmt1.l1">Cadre DAMA-DMBOK, qualité, métadonnées, MDM</li>
+          <li data-i18n="fmt1.l2">Modèle opérationnel, rôles, processus et contrôles</li>
+          <li data-i18n="fmt1.l3">Loi 25, LPRPDE, RGPD · CDO / CPO fractionnel</li>
+          <li data-i18n="fmt1.l4">Microsoft Purview et préparation à Copilot</li>
+        </ul>
+        <div class="btn-row"><a class="btn ghost" href="#services" data-i18n="fmt1.cta">Les huit modules</a></div>
+      </div>
+      <div>
+        <h3 data-i18n="fmt2.h">02 — PME de quartier</h3>
+        <p data-i18n="fmt2.p">Un Microsoft 365 géré, à la hauteur de votre organisation : licences, configuration sécuritaire et suivi continu — avec la conformité intégrée dès le départ, pas ajoutée après coup.</p>
+        <ul>
+          <li data-i18n="fmt2.l1">Revendeur Microsoft autorisé (CSP)</li>
+          <li data-i18n="fmt2.l2">Trois forfaits de gestion par utilisateur</li>
+          <li data-i18n="fmt2.l3">Sauvegardes, accès, courriel, appareils</li>
+          <li data-i18n="fmt2.l4">Politique de confidentialité et registre des incidents inclus</li>
+        </ul>
+        <div class="btn-row"><a class="btn ghost" href="#pme" data-i18n="fmt2.cta">Voir les forfaits</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PME ===== -->
+<section class="section tiers" id="pme">
+  <div class="wrap">
+    <h2 class="bar-title" data-i18n="pme.title">Pour les PME de quartier</h2>
+    <p class="lede text-soft" data-i18n="pme.lede">Le commerce, le cabinet, l'atelier, l'organisme — de 3 à 50 personnes, sans TI interne, mais avec des clients, des courriels et des obligations. Une solution simple, à la hauteur de votre organisation : Microsoft 365 géré, sécurisé et conforme, sans la lourdeur d'une grande entreprise.</p>
+    <div class="info">
+      <div>
+        <h3 data-i18n="t1.h">Essentiel</h3>
+        <p data-i18n="t1.p">Les bases, bien faites. Pour l'équipe qui veut un Microsoft 365 propre et sécuritaire sans y penser.</p>
+        <ul>
+          <li data-i18n="t1.l1">Licences Microsoft 365 (CSP)</li>
+          <li data-i18n="t1.l2">Authentification multifacteur partout</li>
+          <li data-i18n="t1.l3">Sauvegarde courriel et fichiers</li>
+          <li data-i18n="t1.l4">Soutien par courriel</li>
+        </ul>
+        <div class="btn-row"><a class="btn ghost" href="#contact" data-i18n="t.cta">Demander une soumission</a></div>
+      </div>
+      <div class="featured">
+        <h3 data-i18n="t2.h">Standard</h3>
+        <p data-i18n="t2.p">Sécurisé et suivi. Pour l'entreprise qui a des appareils à gérer et des clients à rassurer.</p>
+        <ul>
+          <li data-i18n="t2.l1">Tout le forfait Essentiel</li>
+          <li data-i18n="t2.l2">Gestion des appareils (Intune)</li>
+          <li data-i18n="t2.l3">Politiques d'accès conditionnel</li>
+          <li data-i18n="t2.l4">Revue trimestrielle de sécurité</li>
+        </ul>
+        <div class="btn-row"><a class="btn" href="#contact" data-i18n="t.cta">Demander une soumission</a></div>
+      </div>
+      <div>
+        <h3 data-i18n="t3.h">Gouvernance</h3>
+        <p data-i18n="t3.p">Conforme à la Loi 25. Pour l'organisation qui manipule des renseignements personnels et doit le démontrer.</p>
+        <ul>
+          <li data-i18n="t3.l1">Tout le forfait Standard</li>
+          <li data-i18n="t3.l2">Politique de confidentialité et registre des incidents</li>
+          <li data-i18n="t3.l3">Étiquetage et rétention (Purview)</li>
+          <li data-i18n="t3.l4">Responsable de la protection désigné, soutenu</li>
+        </ul>
+        <div class="btn-row"><a class="btn ghost" href="#contact" data-i18n="t.cta">Demander une soumission</a></div>
+      </div>
+    </div>
+    <p class="note" data-i18n="pme.note">Tarif mensuel par utilisateur, établi selon la taille de votre équipe. Licences Microsoft au tarif revendeur. Sans contrat à long terme.</p>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="section bone" id="services">
+  <div class="wrap">
+    <h2 class="bar-title" data-i18n="svc.title">Ce qu'on fait</h2>
+    <p class="lede text-soft" data-i18n="svc.lede">Huit modules qui s'assemblent selon votre maturité, vos priorités et votre contexte — d'une évaluation ciblée à un programme complet.</p>
+    <div class="cols">
+      <div><span class="num">01</span><h3 data-i18n="s1.h">Gouvernance des données</h3><p data-i18n="s1.p">Structures, rôles, politiques et processus pour une imputabilité claire et durable sur les actifs de données.</p></div>
+      <div><span class="num">02</span><h3 data-i18n="s2.h">Qualité des données</h3><p data-i18n="s2.p">Règles, mesures, remédiation et suivi — pour des données fiables là où elles comptent : opérations, rapports, analytique.</p></div>
+      <div><span class="num">03</span><h3 data-i18n="s3.h">Métadonnées &amp; lignage</h3><p data-i18n="s3.p">Catalogue, glossaire d'affaires, traçabilité : comprendre ce qu'on a, d'où ça vient et qui en répond.</p></div>
+      <div><span class="num">04</span><h3 data-i18n="s4.h">Données maîtres &amp; client</h3><p data-i18n="s4.p">Référentiels (MDM), vue client unifiée, règles de rapprochement et de survie — le volet client en priorité.</p></div>
+      <div><span class="num">05</span><h3 data-i18n="s5.h">Architecture &amp; modélisation</h3><p data-i18n="s5.p">Évaluer et faire évoluer modèles et architectures pour la gouvernance, la modernisation et l'IA.</p></div>
+      <div><span class="num">06</span><h3 data-i18n="s6.h">Modèle opérationnel</h3><p data-i18n="s6.p">Intégrer politiques, rôles, processus et imputabilité dans les opérations quotidiennes — pas dans un classeur.</p></div>
+      <div><span class="num">07</span><h3 data-i18n="s7.h">Vie privée, risques &amp; conformité</h3><p data-i18n="s7.p">Loi 25, LPRPDE, RGPD : ÉFVP, registre des incidents, contrôles et tiers — comme une partie du programme, pas à côté.</p></div>
+      <div><span class="num">08</span><h3 data-i18n="s8.h">Gouvernance de l'IA</h3><p data-i18n="s8.p">Imputabilité, transparence et traçabilité des usages de l'IA, appuyées sur des données gouvernées.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MICROSOFT ===== -->
+<section class="section" id="microsoft">
+  <div class="wrap">
+    <h2 class="bar-title" data-i18n="ms.title">Sur la pile Microsoft</h2>
+    <p class="lede text-soft" data-i18n="ms.lede">On ne s'arrête pas au diagramme. DataMtl configure et opère les outils Microsoft que votre organisation utilise déjà.</p>
+    <div class="cols">
+      <div><h3>Microsoft Purview</h3><p data-i18n="ms1.p">Déploiement et configuration du catalogue de données, du lignage et de la gestion de la conformité.</p></div>
+      <div><h3>Microsoft 365 &amp; Azure</h3><p data-i18n="ms2.p">Licences, déploiement et alignement de la gouvernance pour les outils infonuagiques et de productivité.</p></div>
+      <div><h3 data-i18n="ms3.h">Confidentialité &amp; conformité</h3><p data-i18n="ms3.p">Configuration des outils Microsoft pour soutenir les obligations de la Loi 25, de la LPRPDE et du RGPD.</p></div>
+      <div><h3 data-i18n="ms4.h">Préparation IA &amp; Copilot</h3><p data-i18n="ms4.p">S'assurer que les données sont gouvernées et propres avant de déployer l'IA — pas après.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== À PROPOS ===== -->
+<section class="section bone" id="apropos">
+  <div class="wrap">
+    <h2 class="bar-title" data-i18n="about.title">À propos</h2>
+    <div class="about">
+      <div>
+        <p data-i18n="about.p1"><strong>DataMtl</strong> est une firme-conseil montréalaise spécialisée en gouvernance des données — qualité, métadonnées, données maîtres et client, processus — avec la vie privée et l'IA comme parties intégrantes du programme. On aide les organisations à concevoir, déployer et opérer des programmes de gouvernance pratiques — de l'évaluation initiale jusqu'à l'intégration des processus, des rôles et des contrôles dans les opérations quotidiennes.</p>
+        <p data-i18n="about.p2">Fondée en 2020 par Jean-François Pinel après 21 ans à la Banque de développement du Canada, DataMtl combine une lecture financière des risques et une pratique concrète de la gouvernance. DataMtl fait aussi partie de l'écosystème <strong>DataC5™</strong>, qui développe des normes et des cadres de référence pour une gouvernance des données cohérente, traçable et durable.</p>
+        <div class="tags"><span class="tag">CIPP/C</span><span class="tag">CDMP</span><span class="tag">DCAM</span><span class="tag" data-i18n="about.tag">Revendeur Microsoft (CSP)</span></div>
+      </div>
+      <aside>
+        <h3 data-i18n="why.h">Pourquoi DataMtl</h3>
+        <p data-i18n="why.p1"><strong data-i18n="why.s1">Pratique par conception.</strong> On se concentre sur ce qui sera implanté, utilisé et maintenu — sans livrables surdimensionnés.</p>
+        <p data-i18n="why.p2"><strong>Intégré.</strong> Vie privée, gouvernance, IA et risque sont une seule discipline, pas quatre silos.</p>
+        <p data-i18n="why.p3"><strong>Montréalais, bilingue.</strong> Profondeur réglementaire québécoise et canadienne, service en français et en anglais.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <h2 class="bar-title" data-i18n="ct.title">Travaillons ensemble</h2>
+    <p class="lede text-soft" data-i18n="ct.lede">Échéance de conformité, programme de gouvernance à bâtir, déploiement d'IA à préparer, ou simplement un Microsoft 365 à mettre en ordre — écrivez-nous.</p>
+    <div class="contact">
+      <div class="info">
+        <div><h3 data-i18n="ct.h1">Courriel</h3><p><a href="mailto:info@datamtl.com">info@datamtl.com</a></p></div>
+        <div><h3 data-i18n="ct.h2">Lieu</h3><p>Montréal, Québec, Canada</p></div>
+        <div><h3 data-i18n="ct.h3">Langues</h3><p data-i18n="ct.p3">Français &amp; English</p></div>
+      </div>
+      <form id="contactForm" novalidate>
+        <div class="field"><label for="fn" data-i18n="f.fn">Prénom</label><input id="fn" name="firstName" type="text" autocomplete="given-name"></div>
+        <div class="field"><label for="ln" data-i18n="f.ln">Nom</label><input id="ln" name="lastName" type="text" autocomplete="family-name"></div>
+        <div class="field"><label for="org" data-i18n="f.org">Organisation</label><input id="org" name="org" type="text" autocomplete="organization"></div>
+        <div class="field"><label for="em" data-i18n="f.em">Courriel *</label><input id="em" name="email" type="email" required autocomplete="email"></div>
+        <div class="field full">
+          <label for="area" data-i18n="f.area">Besoin *</label>
+          <select id="area" name="area" required>
+            <option value="" data-i18n="f.o0">Choisir un service</option>
+            <option data-i18n="f.o1">Gouvernance des données</option>
+            <option data-i18n="f.o2">Gouvernance de l'IA</option>
+            <option data-i18n="f.o3">Vie privée (Loi 25 / LPRPDE / RGPD)</option>
+            <option data-i18n="f.o4">Qualité / métadonnées / architecture</option>
+            <option data-i18n="f.o5">Risques et conformité</option>
+            <option data-i18n="f.o6">CDO / CPO / CAIO fractionnel</option>
+            <option data-i18n="f.o7">Solutions Microsoft</option>
+            <option data-i18n="f.o8">Offre PME — Microsoft 365 géré</option>
+            <option data-i18n="f.o9">Formation et littératie des données</option>
+            <option data-i18n="f.o10">Autre / pas encore sûr</option>
+          </select>
+        </div>
+        <div class="field full"><label for="msg" data-i18n="f.msg">Message</label><textarea id="msg" name="message"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="field full"><p class="consent" data-i18n="f.consent">En envoyant ce formulaire, vous consentez à ce que vos renseignements soient utilisés uniquement pour répondre à votre demande, conformément à notre <a href="#confidentialite">politique de confidentialité</a>.</p></div>
+        <div class="form-actions"><button class="btn" type="submit" data-i18n="f.send">Envoyer</button><span class="form-status" id="formStatus" aria-live="polite"></span></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONFIDENTIALITÉ ===== -->
+<section class="section bone plain" id="confidentialite">
+  <div class="wrap">
+    <h2 class="bar-title" data-i18n="pv.title">Confidentialité</h2>
+    <p class="lede text-soft" data-i18n="pv.lede">Ce site pratique ce qu'il prêche.</p>
+    <h3 data-i18n="pv.h1">Aucun traceur</h3>
+    <p data-i18n="pv.p1">Ce site n'utilise aucun témoin (cookie) de suivi, aucun outil d'analytique et aucun pixel publicitaire. Le seul élément conservé dans votre navigateur est votre choix de langue (stockage local, jamais transmis).</p>
+    <h3 data-i18n="pv.h2">Formulaire de contact</h3>
+    <p data-i18n="pv.p2">Les renseignements que vous saisissez (nom, organisation, courriel, message) sont acheminés à DataMtl par le service Web3Forms (relais de courriel, aucune conservation à des fins propres) uniquement pour répondre à votre demande. Ils ne sont ni vendus, ni partagés, ni utilisés à des fins de marketing. Ils sont conservés le temps nécessaire au suivi de votre demande, puis supprimés.</p>
+    <h3 data-i18n="pv.h3">Vos droits</h3>
+    <p data-i18n="pv.p3">Conformément à la Loi 25 et à la LPRPDE, vous pouvez demander l'accès, la rectification ou la suppression de vos renseignements en écrivant à <a href="mailto:privacy@datamtl.com">privacy@datamtl.com</a>. Le responsable de la protection des renseignements personnels de DataMtl est Jean-François Pinel.</p>
+    <h3 data-i18n="pv.h4">Hébergement</h3>
+    <p data-i18n="pv.p4">Le site est hébergé en tant que fichiers statiques et servi par Cloudflare, qui peut traiter des journaux techniques (adresse IP, agent utilisateur) aux fins de sécurité et de performance du réseau.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>DataMtl · Montréal, Québec<br><a href="mailto:info@datamtl.com">info@datamtl.com</a></p>
+    <p><a href="https://www.linkedin.com/company/datamtl" target="_blank" rel="noopener">LinkedIn</a> · <a href="#confidentialite" data-i18n="ft.privacy">Confidentialité</a><br><span data-i18n="ft.copy">© 2026 DataMtl. Tous droits réservés.</span></p>
+    <p class="legal" data-i18n="ft.legal">Microsoft, Microsoft 365, Azure, Purview, Intune et Copilot sont des marques de commerce de Microsoft Corporation. Ce site n'est ni endossé, ni affilié, ni commandité par Microsoft. DataMtl est un revendeur Microsoft autorisé (programme Cloud Solution Provider).</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const I18N = {
+    fr: {
+      'meta.title': 'DataMtl — Gouvernance des données, vie privée et IA responsable · Montréal',
+      'meta.description': "DataMtl est une firme-conseil montréalaise en gouvernance des données : qualité, métadonnées, données maîtres et client, vie privée (Loi 25) et IA. Conseil pour les organisations, Microsoft 365 géré pour les PME de quartier.",
+      'skip': 'Aller au contenu', 'nav.services': 'Services', 'nav.pme': 'PME', 'nav.about': 'À propos', 'nav.contact': 'Contact',
+      'hero.status': 'Montréal · Gouvernance des données · DAMA-DMBOK · Loi 25',
+      'hero.title': 'Vos données,<br>sous contrôle<br>réel.<small>Gouvernance · Qualité · Données maîtres · Vie privée · IA</small>',
+      'hero.body': "Rôles, processus, qualité, métadonnées, données maîtres : une gouvernance qui s'implante et se maintient — la vie privée et l'IA en font partie, pas l'inverse. Pour les organisations, et pour les PME de quartier qui veulent une solution simple, à leur mesure.",
+      'hero.cta1': 'Parlons-en', 'hero.cta2': 'Voir les services',
+      'band.title': 'Conseil · PME · Microsoft',
+      'band.p': 'Même rigueur, deux formats : des programmes de gouvernance pour les organisations, et une solution simple, à la hauteur de la PME de quartier — Microsoft 365 géré, avec les bases de la Loi 25 intégrées.',
+      'fmt.title': 'Deux façons de travailler avec nous',
+      'fmt.lede': "La gouvernance n'a pas la même forme dans une institution financière et dans une entreprise de 15 personnes. On fait les deux — sans vendre la première à la seconde.",
+      'fmt1.h': '01 — Organisations', 'fmt1.p': "Programmes de gouvernance des données — rôles, processus, qualité, métadonnées, données maîtres et client — avec la vie privée et l'IA intégrées : évaluation, conception, déploiement et rôles fractionnels.",
+      'fmt1.l1': 'Cadre DAMA-DMBOK, qualité, métadonnées, MDM', 'fmt1.l2': 'Modèle opérationnel, rôles, processus et contrôles', 'fmt1.l3': 'Loi 25, LPRPDE, RGPD · CDO / CPO fractionnel', 'fmt1.l4': 'Microsoft Purview et préparation à Copilot', 'fmt1.cta': 'Les huit modules',
+      'fmt2.h': '02 — PME de quartier', 'fmt2.p': "Un Microsoft 365 géré, à la hauteur de votre organisation : licences, configuration sécuritaire et suivi continu — avec la conformité intégrée dès le départ, pas ajoutée après coup.",
+      'fmt2.l1': 'Revendeur Microsoft autorisé (CSP)', 'fmt2.l2': 'Trois forfaits de gestion par utilisateur', 'fmt2.l3': 'Sauvegardes, accès, courriel, appareils', 'fmt2.l4': 'Politique de confidentialité et registre des incidents inclus', 'fmt2.cta': 'Voir les forfaits',
+      's1.h': 'Gouvernance des données', 's1.p': 'Structures, rôles, politiques et processus pour une imputabilité claire et durable sur les actifs de données.',
+      's2.h': 'Qualité des données', 's2.p': 'Règles, mesures, remédiation et suivi — pour des données fiables là où elles comptent : opérations, rapports, analytique.',
+      's3.h': 'Métadonnées &amp; lignage', 's3.p': "Catalogue, glossaire d'affaires, traçabilité : comprendre ce qu'on a, d'où ça vient et qui en répond.",
+      's4.h': 'Données maîtres &amp; client', 's4.p': 'Référentiels (MDM), vue client unifiée, règles de rapprochement et de survie — le volet client en priorité.',
+      's5.h': 'Architecture &amp; modélisation', 's5.p': "Évaluer et faire évoluer modèles et architectures pour la gouvernance, la modernisation et l'IA.",
+      's6.h': 'Modèle opérationnel', 's6.p': 'Intégrer politiques, rôles, processus et imputabilité dans les opérations quotidiennes — pas dans un classeur.',
+      's7.h': 'Vie privée, risques &amp; conformité', 's7.p': "Loi 25, LPRPDE, RGPD : ÉFVP, registre des incidents, contrôles et tiers — comme une partie du programme, pas à côté.",
+      's8.h': "Gouvernance de l'IA", 's8.p': "Imputabilité, transparence et traçabilité des usages de l'IA, appuyées sur des données gouvernées.",
+      'svc.title': "Ce qu'on fait", 'svc.lede': "Huit modules qui s'assemblent selon votre maturité, vos priorités et votre contexte — d'une évaluation ciblée à un programme complet.",
+
+
+
+
+
+
+
+      'ms.title': 'Sur la pile Microsoft', 'ms.lede': "On ne s'arrête pas au diagramme. DataMtl configure et opère les outils Microsoft que votre organisation utilise déjà.",
+      'ms1.p': 'Déploiement et configuration du catalogue de données, du lignage et de la gestion de la conformité.',
+      'ms2.p': 'Licences, déploiement et alignement de la gouvernance pour les outils infonuagiques et de productivité.',
+      'ms3.h': 'Confidentialité &amp; conformité', 'ms3.p': 'Configuration des outils Microsoft pour soutenir les obligations de la Loi 25, de la LPRPDE et du RGPD.',
+      'ms4.h': 'Préparation IA &amp; Copilot', 'ms4.p': "S'assurer que les données sont gouvernées et propres avant de déployer l'IA — pas après.",
+      'pme.title': 'Pour les PME de quartier', 'pme.lede': "Le commerce, le cabinet, l'atelier, l'organisme — de 3 à 50 personnes, sans TI interne, mais avec des clients, des courriels et des obligations. Une solution simple, à la hauteur de votre organisation : Microsoft 365 géré, sécurisé et conforme, sans la lourdeur d'une grande entreprise.",
+      't.cta': 'Demander une soumission',
+      't1.p': "Les bases, bien faites. Pour l'équipe qui veut un Microsoft 365 propre et sécuritaire sans y penser.", 't2.p': "Sécurisé et suivi. Pour l'entreprise qui a des appareils à gérer et des clients à rassurer.", 't3.p': "Conforme à la Loi 25. Pour l'organisation qui manipule des renseignements personnels et doit le démontrer.",
+      't1.h': 'Essentiel', 't1.l1': 'Licences Microsoft 365 (CSP)', 't1.l2': 'Authentification multifacteur partout', 't1.l3': 'Sauvegarde courriel et fichiers', 't1.l4': 'Soutien par courriel',
+      't2.h': 'Standard', 't2.l1': 'Tout le forfait Essentiel', 't2.l2': 'Gestion des appareils (Intune)', 't2.l3': "Politiques d'accès conditionnel", 't2.l4': 'Revue trimestrielle de sécurité',
+      't3.h': 'Gouvernance', 't3.l1': 'Tout le forfait Standard', 't3.l2': 'Politique de confidentialité et registre des incidents', 't3.l3': 'Étiquetage et rétention (Purview)', 't3.l4': 'Responsable de la protection désigné, soutenu',
+      'pme.note': 'Tarif mensuel par utilisateur, établi selon la taille de votre équipe. Licences Microsoft au tarif revendeur. Sans contrat à long terme.',
+      'about.title': 'À propos',
+      'about.p1': "<strong>DataMtl</strong> est une firme-conseil montréalaise spécialisée en gouvernance des données — qualité, métadonnées, données maîtres et client, processus — avec la vie privée et l'IA comme parties intégrantes du programme. On aide les organisations à concevoir, déployer et opérer des programmes de gouvernance pratiques — de l'évaluation initiale jusqu'à l'intégration des processus, des rôles et des contrôles dans les opérations quotidiennes.",
+      'about.p2': "Fondée en 2020 par Jean-François Pinel après 21 ans à la Banque de développement du Canada, DataMtl combine une lecture financière des risques et une pratique concrète de la gouvernance. DataMtl fait aussi partie de l'écosystème <strong>DataC5™</strong>, qui développe des normes et des cadres de référence pour une gouvernance des données cohérente, traçable et durable.",
+      'about.tag': 'Revendeur Microsoft (CSP)',
+      'why.h': 'Pourquoi DataMtl',
+      'why.p1': '<strong>Pratique par conception.</strong> On se concentre sur ce qui sera implanté, utilisé et maintenu — sans livrables surdimensionnés.',
+      'why.p2': '<strong>Intégré.</strong> Vie privée, gouvernance, IA et risque sont une seule discipline, pas quatre silos.',
+      'why.p3': '<strong>Montréalais, bilingue.</strong> Profondeur réglementaire québécoise et canadienne, service en français et en anglais.',
+      'ct.title': 'Travaillons ensemble', 'ct.lede': "Échéance de conformité, programme de gouvernance à bâtir, déploiement d'IA à préparer, ou simplement un Microsoft 365 à mettre en ordre — écrivez-nous.",
+      'ct.h1': 'Courriel', 'ct.h2': 'Lieu', 'ct.h3': 'Langues', 'ct.p3': 'Français &amp; English',
+      'f.fn': 'Prénom', 'f.ln': 'Nom', 'f.org': 'Organisation', 'f.em': 'Courriel *', 'f.area': 'Besoin *', 'f.msg': 'Message', 'f.send': 'Envoyer',
+      'f.o0': 'Choisir un service', 'f.o1': 'Gouvernance des données', 'f.o2': "Gouvernance de l'IA", 'f.o3': 'Vie privée (Loi 25 / LPRPDE / RGPD)', 'f.o4': 'Qualité / métadonnées / architecture', 'f.o5': 'Risques et conformité', 'f.o6': 'CDO / CPO / CAIO fractionnel', 'f.o7': 'Solutions Microsoft', 'f.o8': 'Offre PME — Microsoft 365 géré', 'f.o9': 'Formation et littératie des données', 'f.o10': 'Autre / pas encore sûr',
+      'f.consent': 'En envoyant ce formulaire, vous consentez à ce que vos renseignements soient utilisés uniquement pour répondre à votre demande, conformément à notre <a href="#confidentialite">politique de confidentialité</a>.',
+      'f.err.email': 'Courriel invalide.', 'f.err.area': 'Choisissez un service.', 'f.sending': 'Envoi…', 'f.ok': 'Message envoyé — on vous répond sous deux jours ouvrables.', 'f.fail': 'L\'envoi a échoué. Écrivez-nous directement : <a href="mailto:info@datamtl.com">info@datamtl.com</a>',
+      'pv.title': 'Confidentialité', 'pv.lede': "Ce site pratique ce qu'il prêche.",
+      'pv.h1': 'Aucun traceur', 'pv.p1': "Ce site n'utilise aucun témoin (cookie) de suivi, aucun outil d'analytique et aucun pixel publicitaire. Le seul élément conservé dans votre navigateur est votre choix de langue (stockage local, jamais transmis).",
+      'pv.h2': 'Formulaire de contact', 'pv.p2': "Les renseignements que vous saisissez (nom, organisation, courriel, message) sont acheminés à DataMtl par le service Web3Forms (relais de courriel, aucune conservation à des fins propres) uniquement pour répondre à votre demande. Ils ne sont ni vendus, ni partagés, ni utilisés à des fins de marketing. Ils sont conservés le temps nécessaire au suivi de votre demande, puis supprimés.",
+      'pv.h3': 'Vos droits', 'pv.p3': "Conformément à la Loi 25 et à la LPRPDE, vous pouvez demander l'accès, la rectification ou la suppression de vos renseignements en écrivant à <a href=\"mailto:privacy@datamtl.com\">privacy@datamtl.com</a>. Le responsable de la protection des renseignements personnels de DataMtl est Jean-François Pinel.",
+      'pv.h4': 'Hébergement', 'pv.p4': "Le site est hébergé en tant que fichiers statiques et servi par Cloudflare, qui peut traiter des journaux techniques (adresse IP, agent utilisateur) aux fins de sécurité et de performance du réseau.",
+      'ft.privacy': 'Confidentialité', 'ft.copy': '© 2026 DataMtl. Tous droits réservés.',
+      'ft.legal': "Microsoft, Microsoft 365, Azure, Purview, Intune et Copilot sont des marques de commerce de Microsoft Corporation. Ce site n'est ni endossé, ni affilié, ni commandité par Microsoft. DataMtl est un revendeur Microsoft autorisé (programme Cloud Solution Provider)."
+    },
+    en: {
+      'meta.title': 'DataMtl — Data governance, privacy and responsible AI · Montréal',
+      'meta.description': 'DataMtl is a Montréal consulting firm in data governance: quality, metadata, master and customer data, privacy (Law 25) and AI. Advisory for organizations, managed Microsoft 365 for neighbourhood SMEs.',
+      'skip': 'Skip to content', 'nav.services': 'Services', 'nav.pme': 'SMEs', 'nav.about': 'About', 'nav.contact': 'Contact',
+      'hero.status': 'Montréal · Data governance · DAMA-DMBOK · Law 25',
+      'hero.title': 'Your data,<br>under real<br>control.<small>Governance · Quality · Master data · Privacy · AI</small>',
+      'hero.body': 'Roles, processes, quality, metadata, master data: governance that gets implemented and maintained — privacy and AI are part of it, not the other way around. For organizations, and for neighbourhood SMEs that want a simple solution, sized to them.',
+      'hero.cta1': "Let's talk", 'hero.cta2': 'Explore services',
+      'band.title': 'Advisory · SMEs · Microsoft',
+      'band.p': 'Same rigour, two formats: governance programs for organizations, and a simple solution sized to the neighbourhood SME — managed Microsoft 365 with Law 25 basics built in.',
+      'fmt.title': 'Two ways to work with us',
+      'fmt.lede': "Governance doesn't look the same in a financial institution and in a 15-person company. We do both — without selling the first one to the second.",
+      'fmt1.h': '01 — Organizations', 'fmt1.p': 'Data governance programs — roles, processes, quality, metadata, master and customer data — with privacy and AI built in: assessment, design, deployment and fractional roles.',
+      'fmt1.l1': 'DAMA-DMBOK framework, quality, metadata, MDM', 'fmt1.l2': 'Operating model, roles, processes and controls', 'fmt1.l3': 'Law 25, PIPEDA, GDPR · fractional CDO / CPO', 'fmt1.l4': 'Microsoft Purview and Copilot readiness', 'fmt1.cta': 'The eight modules',
+      'fmt2.h': '02 — Neighbourhood SMEs', 'fmt2.p': 'A managed Microsoft 365 sized to your organization: licensing, secure configuration and ongoing monitoring — with compliance built in from day one, not bolted on later.',
+      'fmt2.l1': 'Microsoft Authorized Reseller (CSP)', 'fmt2.l2': 'Three per-user management plans', 'fmt2.l3': 'Backups, access, email, devices', 'fmt2.l4': 'Privacy policy and incident register included', 'fmt2.cta': 'See the plans',
+      's1.h': 'Data governance', 's1.p': 'Structures, roles, policies and processes for clear, sustainable accountability over data assets.',
+      's2.h': 'Data quality', 's2.p': 'Rules, measurement, remediation and monitoring — reliable data where it matters: operations, reporting, analytics.',
+      's3.h': 'Metadata &amp; lineage', 's3.p': 'Catalog, business glossary, traceability: knowing what you have, where it comes from and who owns it.',
+      's4.h': 'Master &amp; customer data', 's4.p': 'Reference and master data (MDM), unified customer view, matching and survivorship rules — customer first.',
+      's5.h': 'Architecture &amp; modeling', 's5.p': 'Assessing and evolving models and architectures for governance, modernization and AI.',
+      's6.h': 'Operating model', 's6.p': 'Embedding policies, roles, processes and accountability in daily operations — not in a binder.',
+      's7.h': 'Privacy, risk &amp; compliance', 's7.p': 'Law 25, PIPEDA, GDPR: PIAs, incident register, controls and third parties — as part of the program, not beside it.',
+      's8.h': 'AI governance', 's8.p': 'Accountability, transparency and traceability of AI use, grounded in governed data.',
+      'svc.title': 'What we do', 'svc.lede': 'Eight modules that assemble around your maturity, priorities and context — from a focused assessment to a full program.',
+
+
+
+
+
+
+
+      'ms.title': 'On the Microsoft stack', 'ms.lede': "We don't stop at the diagram. DataMtl configures and operates the Microsoft tools your organization already uses.",
+      'ms1.p': 'Deploying and configuring the data catalog, lineage and compliance management.',
+      'ms2.p': 'Licensing, deployment and governance alignment for cloud and productivity tools.',
+      'ms3.h': 'Privacy &amp; compliance', 'ms3.p': 'Configuring Microsoft tools to support Law 25, PIPEDA and GDPR obligations.',
+      'ms4.h': 'AI &amp; Copilot readiness', 'ms4.p': 'Making sure data is governed and clean before deploying AI — not after.',
+      'pme.title': 'For neighbourhood SMEs', 'pme.lede': 'The shop, the firm, the workshop, the non-profit — 3 to 50 people, no in-house IT, but customers, email and obligations all the same. A simple solution sized to your organization: managed, secured, compliant Microsoft 365, without big-company overhead.',
+      't.cta': 'Request a quote',
+      't1.p': 'The basics, done right. For the team that wants a clean, secure Microsoft 365 without thinking about it.', 't2.p': 'Secured and monitored. For the business with devices to manage and customers to reassure.', 't3.p': 'Law 25 compliant. For the organization that handles personal information and has to prove it.',
+      't1.h': 'Essential', 't1.l1': 'Microsoft 365 licenses (CSP)', 't1.l2': 'Multi-factor authentication everywhere', 't1.l3': 'Email and file backup', 't1.l4': 'Email support',
+      't2.h': 'Standard', 't2.l1': 'Everything in Essential', 't2.l2': 'Device management (Intune)', 't2.l3': 'Conditional access policies', 't2.l4': 'Quarterly security review',
+      't3.h': 'Governance', 't3.l1': 'Everything in Standard', 't3.l2': 'Privacy policy and incident register', 't3.l3': 'Labeling and retention (Purview)', 't3.l4': 'Designated privacy officer, supported',
+      'pme.note': 'Monthly per-user pricing, set according to your team size. Microsoft licenses at reseller rates. No long-term contract.',
+      'about.title': 'About',
+      'about.p1': '<strong>DataMtl</strong> is a Montréal-based consulting firm specializing in data governance — quality, metadata, master and customer data, processes — with privacy and AI as integral parts of the program. We help organizations design, deploy and run practical governance programs — from initial assessment to embedding processes, roles and controls in daily operations.',
+      'about.p2': 'Founded in 2020 by Jean-François Pinel after 21 years at the Business Development Bank of Canada, DataMtl combines a financial reading of risk with hands-on governance practice. DataMtl is also part of the <strong>DataC5™</strong> ecosystem, which develops standards and reference frameworks for coherent, traceable, sustainable data governance.',
+      'about.tag': 'Microsoft Reseller (CSP)',
+      'why.h': 'Why DataMtl',
+      'why.p1': '<strong>Practical by design.</strong> We focus on what will be implemented, used and maintained — no bloated deliverables.',
+      'why.p2': '<strong>Integrated.</strong> Privacy, governance, AI and risk are one discipline, not four silos.',
+      'why.p3': '<strong>Montréal-rooted, bilingual.</strong> Québec and Canadian regulatory depth, service in French and English.',
+      'ct.title': "Let's work together", 'ct.lede': 'A compliance deadline, a governance program to build, an AI deployment to prepare, or simply a Microsoft 365 tenant to put in order — write to us.',
+      'ct.h1': 'Email', 'ct.h2': 'Location', 'ct.h3': 'Languages', 'ct.p3': 'English &amp; Français',
+      'f.fn': 'First name', 'f.ln': 'Last name', 'f.org': 'Organization', 'f.em': 'Email *', 'f.area': 'Area of interest *', 'f.msg': 'Message', 'f.send': 'Send',
+      'f.o0': 'Select a service', 'f.o1': 'Data governance', 'f.o2': 'AI governance', 'f.o3': 'Privacy (Law 25 / PIPEDA / GDPR)', 'f.o4': 'Quality / metadata / architecture', 'f.o5': 'Risk & compliance', 'f.o6': 'Fractional CDO / CPO / CAIO', 'f.o7': 'Microsoft solutions', 'f.o8': 'SME offering — managed Microsoft 365', 'f.o9': 'Training & data literacy', 'f.o10': 'Other / not sure yet',
+      'f.consent': 'By submitting this form, you consent to your information being used solely to respond to your request, in accordance with our <a href="#confidentialite">privacy policy</a>.',
+      'f.err.email': 'Invalid email.', 'f.err.area': 'Please choose a service.', 'f.sending': 'Sending…', 'f.ok': 'Message sent — we reply within two business days.', 'f.fail': 'Sending failed. Email us directly: <a href="mailto:info@datamtl.com">info@datamtl.com</a>',
+      'pv.title': 'Privacy', 'pv.lede': 'This site practices what it preaches.',
+      'pv.h1': 'No trackers', 'pv.p1': 'This site uses no tracking cookies, no analytics and no advertising pixels. The only thing kept in your browser is your language choice (local storage, never transmitted).',
+      'pv.h2': 'Contact form', 'pv.p2': 'The information you enter (name, organization, email, message) is relayed to DataMtl through Web3Forms (an email relay that keeps nothing for its own purposes) solely to respond to your request. It is never sold, shared or used for marketing. It is kept for as long as needed to follow up, then deleted.',
+      'pv.h3': 'Your rights', 'pv.p3': 'Under Law 25 and PIPEDA, you may request access to, correction or deletion of your information by writing to <a href="mailto:privacy@datamtl.com">privacy@datamtl.com</a>. DataMtl\'s person in charge of personal information protection is Jean-François Pinel.',
+      'pv.h4': 'Hosting', 'pv.p4': 'The site is hosted as static files and served by Cloudflare, which may process technical logs (IP address, user agent) for network security and performance purposes.',
+      'ft.privacy': 'Privacy', 'ft.copy': '© 2026 DataMtl. All rights reserved.',
+      'ft.legal': 'Microsoft, Microsoft 365, Azure, Purview, Intune and Copilot are trademarks of Microsoft Corporation. This site is not endorsed by, affiliated with or sponsored by Microsoft. DataMtl is a Microsoft Authorized Reseller (Cloud Solution Provider program).'
+    }
+  };
+
+  let current = 'fr';
+  const btn = document.getElementById('langBtn');
+
+  function applyLang(lang) {
+    const dict = I18N[lang]; if (!dict) return;
+    current = lang;
+    document.documentElement.lang = lang === 'fr' ? 'fr-CA' : 'en-CA';
+    const setMeta = (sel, val) => { const el = document.querySelector(sel); if (el) el.setAttribute('content', val); };
+    setMeta('meta[property="og:locale"]', lang === 'fr' ? 'fr_CA' : 'en_CA');
+    setMeta('meta[property="og:locale:alternate"]', lang === 'fr' ? 'en_CA' : 'fr_CA');
+    document.title = dict['meta.title'];
+    setMeta('meta[name="description"]', dict['meta.description']);
+    setMeta('meta[property="og:title"]', dict['meta.title']);
+    setMeta('meta[property="og:description"]', dict['meta.description']);
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const v = dict[el.dataset.i18n]; if (v === undefined) return;
+      if (el.tagName === 'OPTION') el.textContent = v.replace(/&amp;/g, '&'); else el.innerHTML = v;
+    });
+    btn.textContent = lang === 'fr' ? 'EN' : 'FR';
+    btn.setAttribute('aria-label', lang === 'fr' ? 'Switch to English' : 'Passer au français');
+    try { localStorage.setItem('dm-lang', lang); } catch (e) {}
+  }
+  let initial = 'fr';
+  try {
+    const q = new URLSearchParams(location.search).get('lang');
+    const stored = localStorage.getItem('dm-lang');
+    if (q === 'en' || q === 'fr') initial = q; else if (stored === 'en' || stored === 'fr') initial = stored;
+  } catch (e) {}
+  applyLang(initial);
+  btn.addEventListener('click', () => applyLang(current === 'fr' ? 'en' : 'fr'));
+
+  /* Formulaire — envoi via Web3Forms (sans traceur), honeypot inclus */
+  const WEB3FORMS_KEY = '16db8bee-3adc-41a8-b0da-8f0ca1869f28';
+  const form = document.getElementById('contactForm'), status = document.getElementById('formStatus'), sendBtn = form.querySelector('button[type=submit]');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const d = I18N[current];
+    if (form.website.value) return;
+    const email = form.email.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { status.textContent = d['f.err.email']; form.email.focus(); return; }
+    if (!form.area.value) { status.textContent = d['f.err.area']; form.area.focus(); return; }
+    const name = [form.firstName.value, form.lastName.value].join(' ').trim();
+    const payload = {
+      access_key: WEB3FORMS_KEY,
+      subject: '[datamtl.com] ' + form.area.value + (form.org.value ? ' — ' + form.org.value : ''),
+      from_name: 'datamtl.com',
+      name: name || '—', email, organisation: form.org.value || '—', besoin: form.area.value,
+      message: form.message.value || '—', langue: current, botcheck: ''
+    };
+    sendBtn.disabled = true; status.textContent = d['f.sending'];
+    try {
+      const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload) });
+      const j = await r.json();
+      if (j.success) { status.textContent = d['f.ok']; form.reset(); }
+      else throw new Error(j.message || 'error');
+    } catch (err) {
+      status.innerHTML = d['f.fail'];
+    } finally { sendBtn.disabled = false; }
+  });
+})();
+</script>
+</body>
+</html>
